@@ -62,7 +62,7 @@ const Home: React.FC = () => {
   return (
     <div className={`${styles.container} ${styles[currentTheme.className]}`}>
       <section className={styles.hero}>
-        <h1 className={styles.title}>Welcome to ThemeApp</h1>
+        <h1 className={styles.title}>Welcome to TrendLoom</h1>
         <p className={styles.subtitle}>
           Experience the power of dynamic theming with our multi-theme
           application. Switch between themes and watch the entire interface
@@ -121,6 +121,7 @@ const Home: React.FC = () => {
             <div className={styles.statNumber}>∞</div>
             <div className={styles.statLabel}>Possibilities</div>
           </div>
+          
         </div>
       </section>
     </div>

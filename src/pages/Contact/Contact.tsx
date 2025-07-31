@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
       icon: "🌐",
       title: "Website",
       value: "www.themeapp.com",
-      link: "https://themeapp.com",
+      link: "https://trendloom-satyamgupta.vercel.app/",
     },
   ];
 

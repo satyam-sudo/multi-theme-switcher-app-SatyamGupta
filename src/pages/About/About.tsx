@@ -69,7 +69,7 @@ const About: React.FC = () => {
   return (
     <div className={`${styles.container} ${styles[currentTheme.className]}`}>
       <section className={styles.hero}>
-        <h1 className={styles.title}>About ThemeApp</h1>
+        <h1 className={styles.title}>About TrendLoom</h1>
         <p className={styles.subtitle}>
           A showcase of modern React development with dynamic theming
           capabilities
@@ -81,7 +81,7 @@ const About: React.FC = () => {
           <h2 className={styles.sectionTitle}>Our Mission</h2>
           <p className={styles.missionText}>
             We believe that great user interfaces should be both beautiful and
-            functional. ThemeApp demonstrates how modern web applications can
+            functional. TrendLoom demonstrates how modern web applications can
             provide users with personalized experiences through dynamic theming
             while maintaining excellent performance and accessibility standards.
           </p>

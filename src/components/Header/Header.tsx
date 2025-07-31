@@ -16,7 +16,7 @@ const Header: React.FC = () => {
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to="/" className={styles.logoLink}>
-            <span className={styles.logoText}>ThemeApp</span>
+            <span className={styles.logoText}>TrendLoom</span>
           </Link>
         </div>
 
