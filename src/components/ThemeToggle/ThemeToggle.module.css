@@ -1,0 +1,229 @@
+/* src/components/ThemeToggle/ThemeToggle.module.css */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: inherit;
+    min-width: 140px;
+    justify-content: space-between;
+}
+
+.dropdownButton:hover {
+    transform: translateY(-1px);
+}
+
+.selectedTheme {
+    white-space: nowrap;
+}
+
+.chevron {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.chevronUp {
+    transform: rotate(180deg);
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.5rem;
+    min-width: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    animation: dropdownFadeIn 0.2s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownItem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    background: transparent;
+    color: inherit;
+}
+
+.dropdownItem:hover {
+    transform: translateX(4px);
+}
+
+.themePreview {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.colorPreview {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.checkIcon {
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.active {
+    font-weight: 600;
+}
+
+/* Theme-specific styles */
+.dropdown.themeMinimalist .dropdownButton {
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    color: #2563eb;
+}
+
+.dropdown.themeMinimalist .dropdownButton:hover {
+    background: rgba(37, 99, 235, 0.15);
+}
+
+.dropdown.themeMinimalist .dropdownMenu {
+    background: white;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.dropdown.themeMinimalist .dropdownItem {
+    color: #4b5563;
+}
+
+.dropdown.themeMinimalist .dropdownItem:hover {
+    background: rgba(37, 99, 235, 0.05);
+    color: #2563eb;
+}
+
+.dropdown.themeMinimalist .dropdownItem.active {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+
+.dropdown.themeDark .dropdownButton {
+    background: rgba(251, 191, 36, 0.15);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+.dropdown.themeDark .dropdownButton:hover {
+    background: rgba(251, 191, 36, 0.2);
+}
+
+.dropdown.themeDark .dropdownMenu {
+    background: #1f2937;
+    border: 1px solid rgba(75, 85, 99, 0.5);
+}
+
+.dropdown.themeDark .dropdownItem {
+    color: #d1d5db;
+}
+
+.dropdown.themeDark .dropdownItem:hover {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+}
+
+.dropdown.themeDark .dropdownItem.active {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+}
+
+.dropdown.themeColorful .dropdownButton {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.dropdown.themeColorful .dropdownButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dropdown.themeColorful .dropdownMenu {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown.themeColorful .dropdownItem {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dropdown.themeColorful .dropdownItem:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.dropdown.themeColorful .dropdownItem.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Color preview styles */
+.themeMinimalistPreview {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.themeDarkPreview {
+    background: linear-gradient(135deg, #111827, #fbbf24);
+}
+
+.themeColorfulPreview {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .dropdownButton {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+        min-width: 120px;
+    }
+
+    .dropdownMenu {
+        min-width: 180px;
+    }
+
+    .dropdownItem {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .colorPreview {
+        width: 16px;
+        height: 16px;
+    }
+}

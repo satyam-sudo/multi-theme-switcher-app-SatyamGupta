@@ -1,0 +1,386 @@
+/* src/pages/About/About.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0 6rem;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.mission {
+    padding: 4rem 0;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-xl);
+    margin: 2rem 0 4rem;
+    animation: slideInRight 0.8s ease-out 0.2s both;
+}
+
+.missionContent {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.missionText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.features {
+    padding: 4rem 0;
+    animation: fadeIn 0.8s ease-out 0.4s both;
+}
+
+.featureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.featureCard {
+    padding: 2rem;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.featureIcon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.featureTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.featureDescription {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.team {
+    padding: 4rem 0;
+    animation: scaleIn 0.8s ease-out 0.6s both;
+}
+
+.teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.teamCard {
+    padding: 2.5rem 2rem;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-xl);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.teamCard:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.avatar {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.memberName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.memberRole {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.memberBio {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.technologies {
+    padding: 4rem 0;
+    background: var(--surface-color);
+    border-radius: var(--border-radius-xl);
+    margin: 4rem 0;
+    animation: slideInLeft 0.8s ease-out 0.8s both;
+}
+
+.techGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 2rem;
+}
+
+.techItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--background-color);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.techItem:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.techIcon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.techName {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.cta {
+    padding: 4rem 0;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out 1s both;
+}
+
+.ctaContent {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-xl);
+    color: white;
+    box-shadow: var(--shadow-heavy);
+}
+
+.ctaTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.ctaDescription {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primaryButton,
+.secondaryButton {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.primaryButton {
+    background: white;
+    color: var(--primary-color);
+}
+
+.primaryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+.secondaryButton {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondaryButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+/* Theme-specific styles */
+.container.themeMinimalist .title {
+    color: var(--primary-color);
+}
+
+.container.themeDark .title {
+    font-family: 'Playfair Display', serif;
+}
+
+.container.themeDark .mission,
+.container.themeDark .technologies {
+    background: var(--surface-elevated);
+}
+
+.container.themeDark .techItem {
+    background: var(--surface-color);
+}
+
+.container.themeColorful .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+}
+
+.container.themeColorful .featureCard,
+.container.themeColorful .teamCard {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    backdrop-filter: blur(10px);
+}
+
+.container.themeColorful .mission,
+.container.themeColorful .technologies {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    backdrop-filter: blur(15px);
+}
+
+.container.themeColorful .techItem {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 0 4rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .featureGrid,
+    .teamGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .techGrid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .ctaButtons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .container.themeColorful .title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .hero {
+        padding: 2rem 0 3rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .missionContent {
+        padding: 1.5rem;
+    }
+
+    .featureCard,
+    .teamCard {
+        padding: 1.5rem;
+    }
+
+    .ctaContent {
+        padding: 2rem 1.5rem;
+    }
+
+    .ctaTitle {
+        font-size: 2rem;
+    }
+}

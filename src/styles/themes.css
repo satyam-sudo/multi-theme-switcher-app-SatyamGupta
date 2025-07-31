@@ -1,0 +1,224 @@
+/* src/styles/themes.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Theme 1: Minimalist */
+body.theme-minimalist {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --accent-color: #1d4ed8;
+    --background-color: #ffffff;
+    --surface-color: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    --gradient-background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+
+    font-family: 'Inter', sans-serif;
+    background: var(--gradient-background);
+    color: var(--text-primary);
+}
+
+/* Theme 2: Dark Professional */
+body.theme-dark {
+    --primary-color: #fbbf24;
+    --secondary-color: #f59e0b;
+    --accent-color: #d97706;
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --surface-elevated: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #475569;
+    --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-heavy: 0 10px 15px rgba(0, 0, 0, 0.5);
+    --gradient-primary: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    --gradient-background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+    font-family: 'Playfair Display', serif;
+    background: var(--gradient-background);
+    color: var(--text-primary);
+}
+
+/* Theme 3: Colorful Playful */
+body.theme-colorful {
+    --primary-color: #ec4899;
+    --secondary-color: #a855f7;
+    --accent-color: #8b5cf6;
+    --tertiary-color: #06b6d4;
+    --quaternary-color: #10b981;
+    --background-color: #fef7ff;
+    --surface-color: #ffffff;
+    --surface-elevated: #f3e8ff;
+    --text-primary: #581c87;
+    --text-secondary: #7c3aed;
+    --text-muted: #a855f7;
+    --border-color: #e879f9;
+    --shadow-light: 0 2px 4px rgba(236, 72, 153, 0.1);
+    --shadow-medium: 0 8px 16px rgba(236, 72, 153, 0.15);
+    --shadow-heavy: 0 16px 32px rgba(236, 72, 153, 0.2);
+    --gradient-primary: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+    --gradient-secondary: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+    --gradient-tertiary: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+    --gradient-background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 50%, #ede9fe 100%);
+
+    font-family: 'Pacifico', cursive;
+    background: var(--gradient-background);
+    color: var(--text-primary);
+}
+
+/* Theme-specific animations */
+body.theme-minimalist * {
+    transition: all 0.2s ease;
+}
+
+body.theme-dark * {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.theme-colorful * {
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Custom properties for consistent theming */
+:root {
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-full: 9999px;
+
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --line-height-tight: 1.25;
+    --line-height-snug: 1.375;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.625;
+    --line-height-loose: 2;
+
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+}
+
+/* Dark theme scrollbar */
+body.theme-dark ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.theme-dark ::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.3);
+}
+
+body.theme-dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 36, 0.5);
+}
+
+/* Colorful theme scrollbar */
+body.theme-colorful ::-webkit-scrollbar-track {
+    background: rgba(236, 72, 153, 0.1);
+}
+
+body.theme-colorful ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    border-radius: 4px;
+}
+
+body.theme-colorful ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #db2777, #9333ea);
+}
+
+/* Selection colors */
+body.theme-minimalist ::selection {
+    background: rgba(37, 99, 235, 0.2);
+    color: #1e293b;
+}
+
+body.theme-dark ::selection {
+    background: rgba(251, 191, 36, 0.3);
+    color: #f1f5f9;
+}
+
+body.theme-colorful ::selection {
+    background: rgba(236, 72, 153, 0.3);
+    color: #581c87;
+}
+
+/* Focus ring colors */
+body.theme-minimalist button:focus,
+body.theme-minimalist a:focus,
+body.theme-minimalist input:focus,
+body.theme-minimalist textarea:focus,
+body.theme-minimalist select:focus {
+    outline-color: var(--primary-color);
+}
+
+body.theme-dark button:focus,
+body.theme-dark a:focus,
+body.theme-dark input:focus,
+body.theme-dark textarea:focus,
+body.theme-dark select:focus {
+    outline-color: var(--primary-color);
+}
+
+body.theme-colorful button:focus,
+body.theme-colorful a:focus,
+body.theme-colorful input:focus,
+body.theme-colorful textarea:focus,
+body.theme-colorful select:focus {
+    outline-color: var(--primary-color);
+}
+
+/* Theme transition effect */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
