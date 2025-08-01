@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta
+      name="description"
+      content="TrendLoom - Experience dynamic theming with React"
+    />
+    <meta
+      name="keywords"
+      content="React, TypeScript, Theme Switcher, Multi-Theme, Responsive Design"
+    />
+    <meta name="author" content="TrendLoom Development Team" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TrendLoom" />
+    <meta
+      property="og:description"
+      content="Experience dynamic theming with our React-based multi-theme application"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TrendLoom" />
+    <meta
+      name="twitter:description"
+      content="Experience dynamic theming with our React-based multi-theme application"
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/twitter-image.png" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Load Inter font as default -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval';
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://fakestoreapi.com;
+      frame-ancestors 'none';
+    "
+    />
+
+    <title>TrendLoom</title>
+
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      html {
+        visibility: hidden;
+      }
+      html.theme-minimalist,
+      html.theme-dark,
+      html.theme-colorful {
+        visibility: visible;
+      }
+    </style>
+
+    <!-- Set initial theme class -->
+    <script>
+      (function () {
+        try {
+          const savedTheme = localStorage.getItem("selectedTheme");
+          const themeClass = savedTheme
+            ? savedTheme === "theme1"
+              ? "theme-minimalist"
+              : savedTheme === "theme2"
+              ? "theme-dark"
+              : savedTheme === "theme3"
+              ? "theme-colorful"
+              : "theme-minimalist"
+            : "theme-minimalist";
+          document.documentElement.className = themeClass;
+        } catch (e) {
+          document.documentElement.className = "theme-minimalist";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <div
+        style="
+          text-align: center;
+          padding: 2rem;
+          font-family: Arial, sans-serif;
+        "
+      >
+        <h1>JavaScript Required</h1>
+        <p>You need to enable JavaScript to run this app.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then(function (registration) {
+              console.log("SW registered: ", registration);
+            })
+            .catch(function (registrationError) {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+/* src/components/Layout/Layout.module.css */
+
+.layout {
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.main {
+    padding-top: 70px;
+    min-height: calc(100vh - 70px);
+    display: flex;
+}
+
+.content {
+    flex: 1;
+    transition: all 0.3s ease;
+    padding: 2rem;
+}
+
+/* Theme-specific styles */
+.layout.themeMinimalist {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    color: #334155;
+}
+
+.layout.themeDark {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+}
+
+.layout.themeColorful {
+    background: linear-gradient(135deg, #fef7ff 0%, #f3e8ff 50%, #ede9fe 100%);
+    color: #581c87;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 1rem 0.75rem;
+    }
+}
