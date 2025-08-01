@@ -61,8 +61,186 @@
     font-weight: 700;
 }
 
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .themeToggleWrapper {
     flex-shrink: 0;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background-color: currentColor;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: 1px;
+}
+
+.hamburgerOpen .hamburgerLine:first-child {
+    transform: rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerOpen .hamburgerLine:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+/* Mobile Sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1001;
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.mobileSidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    z-index: 1002;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.mobileSidebarOpen {
+    transform: translateX(0);
+}
+
+.sidebarContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.sidebarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+}
+
+.sidebarTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.closeButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.mobileNav {
+    flex: 1;
+    padding: 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobileNavLink {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+}
+
+.mobileNavLink:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(8px);
+}
+
+.mobileNavActive {
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.sidebarFooter {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+.sidebarThemeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.themeLabel {
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 /* Theme-specific styles */
@@ -90,6 +268,30 @@
     background: rgba(37, 99, 235, 0.1);
 }
 
+.mobileSidebar.themeMinimalist {
+    background: white;
+    color: #333;
+}
+
+.mobileSidebar.themeMinimalist .sidebarHeader {
+    border-bottom-color: #e5e7eb;
+}
+
+.mobileSidebar.themeMinimalist .mobileNavLink:hover {
+    background: rgba(37, 99, 235, 0.05);
+    color: #2563eb;
+}
+
+.mobileSidebar.themeMinimalist .mobileNavActive {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border-left-color: #2563eb;
+}
+
+.mobileSidebar.themeMinimalist .sidebarFooter {
+    border-top-color: #e5e7eb;
+}
+
 .header.themeDark {
     background: rgba(17, 24, 39, 0.95);
     color: #f9fafb;
@@ -113,6 +315,30 @@
 .header.themeDark .navLink.active {
     color: #fbbf24;
     background: rgba(251, 191, 36, 0.2);
+}
+
+.mobileSidebar.themeDark {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+.mobileSidebar.themeDark .sidebarHeader {
+    border-bottom-color: #374151;
+}
+
+.mobileSidebar.themeDark .mobileNavLink:hover {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+}
+
+.mobileSidebar.themeDark .mobileNavActive {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border-left-color: #fbbf24;
+}
+
+.mobileSidebar.themeDark .sidebarFooter {
+    border-top-color: #374151;
 }
 
 .header.themeColorful {
@@ -144,6 +370,30 @@
     color: white;
 }
 
+.mobileSidebar.themeColorful {
+    background: linear-gradient(135deg, #ec4899, #a855f7);
+    color: white;
+}
+
+.mobileSidebar.themeColorful .sidebarHeader {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobileSidebar.themeColorful .mobileNavLink:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.mobileSidebar.themeColorful .mobileNavActive {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-left-color: white;
+}
+
+.mobileSidebar.themeColorful .sidebarFooter {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
 /* Mobile responsive */
 @media (max-width: 768px) {
     .container {
@@ -151,30 +401,68 @@
     }
 
     .nav {
-        gap: 1rem;
+        display: none;
     }
 
-    .navLink {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
+    .hamburger {
+        display: flex;
     }
 
     .logoText {
         font-size: 1.5rem;
     }
+
+    .mobileSidebar {
+        width: 300px;
+    }
 }
 
 @media (max-width: 640px) {
-    .nav {
-        gap: 0.5rem;
-    }
-
-    .navLink {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-    }
-
     .logoText {
         font-size: 1.3rem;
+    }
+
+    .mobileSidebar {
+        width: 280px;
+        max-width: 90vw;
+    }
+
+    .sidebarHeader,
+    .sidebarFooter {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .mobileNavLink {
+        padding: 1rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .mobileNav {
+        padding: 1.5rem 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .mobileSidebar {
+        width: 260px;
+        max-width: 88vw;
+    }
+
+    .sidebarHeader,
+    .sidebarFooter {
+        padding: 1.25rem 1rem;
+    }
+
+    .mobileNavLink {
+        padding: 0.9rem 1rem;
+        gap: 1rem;
+    }
+
+    .sidebarTitle {
+        font-size: 1.2rem;
     }
 }
